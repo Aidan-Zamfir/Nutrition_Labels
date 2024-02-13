@@ -19,7 +19,7 @@ class TextData:
         return text
 
 
-    def string_splice(self): #make this a dataframe
+    def string_splice(self): #use to make dict NOT new text file
         with open(PATH, "r") as f:
             text = f.readline()
 

@@ -7,6 +7,8 @@ class TextData:
 
     def __init__(self):
         self.ingredient_list = []
+        self.ingredient_dict = {}
+        self.temp_ing_list = [] #for string_splice() to add to dict
 
 
 
@@ -20,13 +22,26 @@ class TextData:
 
 
     def string_splice(self): #use to make dict NOT new text file
+        """Make 'key' for dict th name of product:
+        should be an arg in function to input name (somewhere from main)"""
+
         with open(PATH, "r") as f:
             text = f.readline()
 
             x = text.split(',')
-            for i in x:
-                with open(ING_PATH, "a") as nf:
-                    nf.write(i)
+            for i in x[1:]:
+                self.temp_ing_list.append(i)
+
+            self.ingredient_dict = {"key1": self.temp_ing_list}
+
+        return self.ingredient_dict
+
+    def make_df(self):
+        df = pd.DataFrame(self.ingredient_dict)
+
+        print(df)
+
+
 
 
 

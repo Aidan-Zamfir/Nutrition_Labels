@@ -19,8 +19,16 @@ text_dict = {
     "k3": ['(GLUCOSE (48%)', 'WATER (759)', 'STARCH(5%)', 'LYSINE(5%)'],
 }
 
-text_dict = pad_list(text_dict, "---")
+text_dict = pad_list(text_dict, "------")
 print(text_dict)
 
-df = pd.DataFrame(text_dict)
-print(df)
+
+
+# df = pd.DataFrame(text_dict)
+# print(df)
+
+
+#  --USE LATER--
+# df.to_csv('test.csv', index=False)
+# df2 = pd.read_csv('test.csv')
+# print(df2)

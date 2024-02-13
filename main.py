@@ -17,6 +17,9 @@ def main():
     split_text = x.string_splice()
     split_text
 
+    d = x.make_df()
+    print(d)
+
 
 
 if __name__ == "__main__":

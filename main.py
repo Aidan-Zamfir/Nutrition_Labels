@@ -6,12 +6,13 @@ def save_ings():
     gd.get_data()
 
 def main():
-    # save_ings()
+    save_ings()
 
     x = TextData()
-    x.process_text()
-    print(x.ingredient_list)
-    x.tester()
+    x.get_text()
+    # x.process_text()
+    # print(x.ingredient_list)
+    # x.tester()
 
 
 

@@ -6,13 +6,15 @@ def save_ings():
     gd.get_data()
 
 def main():
-    save_ings()
+    # save_ings()
 
     x = TextData()
-    test = x.get_text()
+
+    # test = x.get_text()
+    # print(test)
+    # print(" ")
+
     split_text = x.string_splice()
-    print(test)
-    print(" ")
     split_text
 
 

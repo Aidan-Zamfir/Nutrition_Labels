@@ -1,6 +1,8 @@
 # import nltk
+import pandas as pd
 
 PATH = 'temp_ingredients.txt'
+ING_PATH = 'ingr_text.txt'
 class TextData:
 
     def __init__(self):
@@ -9,15 +11,22 @@ class TextData:
 
 
     def get_text(self):
+        """Use simply to check/print text in temp_ingredients"""
+
         with open(PATH, "r") as f:
             text = f.readline()
 
         return text
 
 
-    def string_splice(self):
-        text = self.get_text()
-        text.split(',')
+    def string_splice(self): #make this a dataframe
+        with open(PATH, "r") as f:
+            text = f.readline()
+
+            x = text.split(',')
+            for i in x:
+                with open(ING_PATH, "a") as nf:
+                    nf.write(i)
 
 
 

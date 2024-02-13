@@ -1,7 +1,6 @@
 # import nltk
 
-PATH = 'temp_ingredients.txt' # will need to change path once folder implemented
-
+PATH = 'temp_ingredients.txt'
 class TextData:
 
     def __init__(self):
@@ -13,9 +12,11 @@ class TextData:
         with open(PATH, "r") as f:
             text = f.readline()
 
-        print(text)
+        return text
 
 
+    def string_splice(self):
+        pass
 
 
 

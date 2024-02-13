@@ -17,7 +17,5 @@ class ImageData:
         for i in result:
             text = i[1]
 
-
             with open('temp_ingredients.txt', "a") as f:
                     f.write(text)
-

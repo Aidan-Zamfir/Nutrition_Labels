@@ -9,12 +9,8 @@ def main():
     save_ings()
 
     x = TextData()
-    x.get_text()
-    # x.process_text()
-    # print(x.ingredient_list)
-    # x.tester()
-
-
+    test = x.get_text()
+    print(test)
 
 
 if __name__ == "__main__":

@@ -10,7 +10,11 @@ def main():
 
     x = TextData()
     test = x.get_text()
+    split_text = x.string_splice()
     print(test)
+    print(" ")
+    split_text
+
 
 
 if __name__ == "__main__":

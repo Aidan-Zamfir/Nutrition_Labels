@@ -16,7 +16,8 @@ class TextData:
 
 
     def string_splice(self):
-        pass
+        text = self.get_text()
+        text.split(',')
 
 
 

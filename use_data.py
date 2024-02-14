@@ -7,3 +7,10 @@ class DataAnalysis:
     def __init__(self):
         pass
 
+    #make funcs to get data from JSON, create df, etc
+
+    def create_df(self):
+        pass
+
+
+

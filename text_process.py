@@ -7,7 +7,6 @@ class TextData:
     """Takes ingredients from lable, creates dict. for dataframe to use"""
 
     def __init__(self):
-        self.ingredient_list = []
         self.ingredient_dict = {}
         self.temp_ing_list = [] #for string_splice() to add to dict
 

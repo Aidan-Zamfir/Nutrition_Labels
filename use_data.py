@@ -2,12 +2,12 @@ import pandas as pd
 import json
 
 class DataAnalysis:
-    """Import JSON file with dict, creates df & graphs frequency of ingredients"""
+    """Imports dictionary from JSON, creates df & graphs frequency of ingredients"""
 
     def __init__(self):
         pass
 
-    #make funcs to get data from JSON, create df, etc
+
     def pad_list(self, dict_list, padel):
 
         lmax = 0
@@ -20,15 +20,21 @@ class DataAnalysis:
             return dict_list
 
 
-    def create_df(self):
+    def get_json(self):
+
         with open('ingredient_dictionary.json') as f:
             ingredient_dict = json.load(f)
 
-        #pad_list()
-        #dict to df
+        return ingredient_dict
+
+    def create_df(self):
+        ings = self.get_json()
+
+        padded_dictionary = self.pad_list(ings, " ")
+
+        df = pd.DataFrame(padded_dictionary)
+        return df
+
+
+    def graph_data(self):
         pass
-
-
-
-
-

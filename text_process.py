@@ -11,18 +11,7 @@ class TextData:
         self.ingredient_list = [] #for string_splice() to add to dict
 
 
-    def get_text(self): #delete later
-        """Use simply to check/print text in temp_ingredients"""
-
-        with open(PATH, "r") as f:
-            text = f.readline()
-
-        return text
-
-
     def string_splice(self, food_item): #use to make dict & JSON
-        """Make 'key' for dict th name of product:
-        should be an arg in function to input name (somewhere from main)"""
 
         with open(PATH, "r") as f:
             text = f.readline()

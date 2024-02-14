@@ -9,6 +9,7 @@ class DataAnalysis:
 
 
     def pad_list(self, dict_list, padel):
+        """Make all nested ingredient lists in dict. the same length"""
 
         lmax = 0
         for i in dict_list.keys():
@@ -21,6 +22,7 @@ class DataAnalysis:
 
 
     def get_json(self):
+        """Access dict from JSON, make dict. useable for methods"""
 
         with open('ingredient_dictionary.json') as f:
             ingredient_dict = json.load(f)
@@ -28,13 +30,15 @@ class DataAnalysis:
         return ingredient_dict
 
     def create_df(self):
-        ings = self.get_json()
+        """Take dict. from JSON, add padding, put it into a df"""
 
-        padded_dictionary = self.pad_list(ings, " ")
-
+        ingredient_dict = self.get_json()
+        padded_dictionary = self.pad_list(ingredient_dict, " ")
         df = pd.DataFrame(padded_dictionary)
+
         return df
 
 
     def graph_data(self):
+        """Get actual data comparing food items etc...."""
         pass

@@ -1,16 +1,16 @@
 import easyocr
 
-
 class ImageData:
     """Text recognition from image -> used to extract ingredients from nutrition label
-    and store them in a format which can be used for dataframes.
-     (WORKS as intended dont change till end)"""
+    and store them in a format which can be used for dataframes."""
 
     def __init__(self):
-        self.image_path = "Labelling_ingredients_list.jpg" # change to folder
+        self.image_path = "Labelling_ingredients_list.jpg"
+        # change to folder
+        # make method to delete image from folder after each use
 
 
-    def get_data(self): #change to acess text directly rather than from txt file
+    def get_data(self): #change to acess text directly rather than from txt file (?)
 
         reader = easyocr.Reader(['en'], gpu=False)
         result = reader.readtext(self.image_path)

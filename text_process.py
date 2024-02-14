@@ -8,7 +8,7 @@ class TextData:
 
     def __init__(self):
         self.ingredient_dict = {}
-        self.temp_ing_list = [] #for string_splice() to add to dict
+        self.ingredient_list = [] #for string_splice() to add to dict
 
 
 
@@ -21,7 +21,7 @@ class TextData:
         return text
 
 
-    def string_splice(self, food_item): #use to make dict NOT new text file
+    def string_splice(self, food_item): #use to make dict & JSON
         """Make 'key' for dict th name of product:
         should be an arg in function to input name (somewhere from main)"""
 
@@ -30,16 +30,16 @@ class TextData:
 
             x = text.split(',')
             for i in x[1:]: #itterate over ingreds. (skip first item) and add to local list
-                self.temp_ing_list.append(i)
+                self.ingredient_list.append(i)
 
-            self.ingredient_dict = {f"{food_item}": self.temp_ing_list}
+            self.ingredient_dict = {food_item: self.ingredient_list}
 
-        return self.ingredient_dict
+        with open('ingredient_dictionary.json', 'a') as f:
+            json.dump(self.ingredient_dict, f)
 
-    def make_df(self):
-        df = pd.DataFrame(self.ingredient_dict)
 
-        print(df)
+
+
 
 
 

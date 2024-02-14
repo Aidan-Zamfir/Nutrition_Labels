@@ -27,7 +27,7 @@ print(text_dict)
 # with open('my_dict.json', 'w') as f:
 #     json.dump(my_dict, f)
 #
-# # elsewhere...
+
 #
 # with open('my_dict.json') as f:
 #     my_dict = json.load(f)

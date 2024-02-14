@@ -1,4 +1,5 @@
 import pandas as pd
+import json
 
 #test converting dicts to df's
 
@@ -19,10 +20,18 @@ text_dict = {
     "k3": ['(GLUCOSE (48%)', 'WATER (759)', 'STARCH(5%)', 'LYSINE(5%)'],
 }
 
-text_dict = pad_list(text_dict, "------")
+text_dict = pad_list(text_dict, " ")
 print(text_dict)
 
 
+# with open('my_dict.json', 'w') as f:
+#     json.dump(my_dict, f)
+#
+# # elsewhere...
+#
+# with open('my_dict.json') as f:
+#     my_dict = json.load(f)
+#
 
 # df = pd.DataFrame(text_dict)
 # print(df)

@@ -1,9 +1,10 @@
-# import nltk
 import pandas as pd
+import json
 
 PATH = 'temp_ingredients.txt'
-ING_PATH = 'ingr_text.txt'
+
 class TextData:
+    """Takes ingredients from lable, creates dict. for dataframe to use"""
 
     def __init__(self):
         self.ingredient_list = []
@@ -12,7 +13,7 @@ class TextData:
 
 
 
-    def get_text(self):
+    def get_text(self): #delete later
         """Use simply to check/print text in temp_ingredients"""
 
         with open(PATH, "r") as f:
@@ -21,7 +22,7 @@ class TextData:
         return text
 
 
-    def string_splice(self): #use to make dict NOT new text file
+    def string_splice(self, food_item): #use to make dict NOT new text file
         """Make 'key' for dict th name of product:
         should be an arg in function to input name (somewhere from main)"""
 
@@ -29,10 +30,10 @@ class TextData:
             text = f.readline()
 
             x = text.split(',')
-            for i in x[1:]:
+            for i in x[1:]: #itterate over ingreds. (skip first item) and add to local list
                 self.temp_ing_list.append(i)
 
-            self.ingredient_dict = {"key1": self.temp_ing_list}
+            self.ingredient_dict = {f"{food_item}": self.temp_ing_list}
 
         return self.ingredient_dict
 
